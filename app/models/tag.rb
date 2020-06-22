@@ -3,5 +3,7 @@ class Tag < ActiveRecord::Base
     has_many :dishes, through: :dish_tags
     validates :name, presence: true
     validates :name, format: {with: /...+/}
-    
+    validates :name, format: {with: /\A[^\ ]*(\ )?[^\ ]*\z/}
+
+      
 end
